@@ -1,0 +1,118 @@
+{
+    "package": "com.coohuaclient",
+    "activity": "com.coohuaclient.ui.activity.LockScreenOneViewActivity",
+    "loop": -1,
+    "unlock_start_positon": ["50%", "90%"],
+    "unlock_start_positon_to_left": ["12.5%", "90%"],
+    "unlock_start_positon_to_right": ["87.5%", "90%"],
+    "space_time": 0.5,
+    "wake_up_wait_time": 2,
+    "unlock_drag_wait_time": 2,
+    "share_event": {
+        "actions": [{
+                "type": "touch",
+                "desp":"点击微信分享按钮",
+                "touch_x": "60%",
+                "touch_y": "70%"
+            },
+            {
+            	"type": "sleep",
+                "time": 2
+            }
+        ]
+    },
+    "scan_event": {
+        "actions": [{
+            	"type": "sleep",
+                "time": 2
+            },
+            {
+                "type": "touch",
+                "desp":"关闭页面",
+                "touch_x": "25%",
+                "touch_y": "95%"
+            }
+        ]
+    },
+    "download_event": {
+        "actions": [{
+                "type": "print",
+                "message": "will start download"
+            },
+            {
+                "type": "touch",
+                "desp":"点击下载按钮",
+                "touch_x": "33%",
+                "touch_y": "93%"
+            },
+            {
+                "type": "sleep",
+                "desp":"休息等待下载完成",
+                "time": 15
+            },
+            {
+                "type": "print",
+                "message": "downloading"
+            },
+            {
+                "type": "touch",
+                "desp":"点击安装按钮",
+                "touch_x": "33%",
+                "touch_y": "93%"
+            },
+            {
+                "type": "sleep",
+                "desp":"等待跳转到系统安装界面",
+                "time": 3
+            },
+            {
+                "type": "print",
+                "desp":"系统安装界面",
+                "message": "system install"
+            },
+            {
+                "type": "touch",
+                "desp":"点击系统安装按钮",
+                "touch_x": "66%",
+                "touch_y": "93%"
+            },
+             {
+                "type": "print",
+                "desp":"系统安装中",
+                "message": "system installing"
+            },
+            {
+                "type": "sleep",
+                "desp":"系统安装完成",
+                "time": 15
+            },
+            {
+                "type": "touch",
+                "desp":"点击系统打开按钮",
+                "touch_x": "66%",
+                "touch_y": "93%"
+            },
+            {
+                "type": "sleep",
+                "desp":"启动试玩",
+                "time": 20
+            },
+            {
+                "type":"drag",
+                "desp":"应用内拖动",
+                "touch_s_x":"33%",
+                "touch_s_y":"55%",
+                "touch_e_x":"0%",
+                "touch_e_y":"55%",
+            },
+            {
+                "type":"drag",
+                "desp":"应用内拖动",
+                "touch_s_x":"33%",
+                "touch_s_y":"55%",
+                "touch_e_x":"0%",
+                "touch_e_y":"55%",
+            }
+        ]
+    }
+}

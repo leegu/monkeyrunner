@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>生自动化脚本-创建配置JSON文件</title>
+<script type="text/javascript">
+
+	function create(){
+		var s = {};
+
+		alert(s);
+		console.log(JSON.stringify(s));
+	}
+
+	var events = {};
+	function addAction(){
+
+	}
+
+	function onActionChanged(){
+		var a = document.getElementById('action').value;
+		if(a == 'touch'){
+			document.getElementById('touch_action').style.setProperty('display','visible');
+		}else if(a == 'drag'){
+			document.getElementById('drag_action').style.setProperty('display','visible');
+		}else if(a == 'print'){
+			document.getElementById('print_action').style.setProperty('display','visible');
+		}else if(a == 'sleep'){
+			document.getElementById('sleep_action').style.setProperty('display','visible');
+		}
+	}
+
+</script>
+</head>
+
+<body>
+	<div style="backgroud-color:#eee">
+		启动程序包名:<input  id='package'/><br/>
+		启动程序Actvity:<input  id='activity'/><br/>
+		循环次数(-1为无限循环):<input  id='loop'/><br/>
+		解锁屏幕起始位置:X<input  id='unlock_start_positon_x'/>，Y<input  id='unlock_start_positon_y'/><br/>
+		解锁屏幕向左终止位置:X<input  id='unlock_start_positon_to_left_x'/>，X<input  id='unlock_start_positon_to_left_y'/><br/>
+		解锁屏幕向右终止位置:X:<input  id='unlock_start_positon_to_right_x'/>,Y<input  id='unlock_start_positon_to_right_y'/><br/>
+	</div>
+	<hr/>
+	<div style="backgroud-color:#ddd">
+		事件类型
+		<select id='event'>
+			<option value='share_event'>分享</option>
+			<option value='scan_event'>浏览</option>
+			<option value='download_event'>下载</option>
+		</select>
+		</br>
+		动作类型
+		<select id='action' onchange="onActionChanged()">
+			<option value='touch'>触屏</option>
+			<option value='sleep'>休息</option>
+			<option value='print'>打印日志</option>
+			<option value='drag'>拖动</option>
+		</select>
+		<div style="display1:none" id='touch_action'>
+			触点: X<input  id='touch_action_x'/>，Y<input  id='touch_action_x'/>
+		</div><br/>
+		<div style="display:none" id='sleep_action'>
+			休息时间<input  id='sleep_action_time'/>
+		</div><br/>
+		<div style="display:none" id='print_action'>
+			打印日志内容<input  id='print_action_message'/>
+		</div><br/>
+		<div style="display:none" id='drag_action'>
+			拖动: <br/>
+			起始位置：X<input  id='drag_action_s_x'/>，Y<input  id='drag_action_s_y'/>
+			终止位置：X<input  id='drag_action_e_x'/>，Y<input  id='drag_action_e_y'/>
+		</div><br/>
+
+		<button onclick='addAction()' >确定添加</button>
+	</div>
+	<div >
+		<button onclick='create()' >创建配置文件</button>
+	</div>
+</body>
+</html>
